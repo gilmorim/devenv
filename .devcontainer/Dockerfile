@@ -15,10 +15,17 @@ WORKDIR $USER_HOME
 
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 RUN git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+RUN git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+RUN git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 COPY --chown=${USERNAME}:${USERNAME} .devcontainer/resources/sample-zshrc $USER_HOME/.zshrc
 COPY --chown=${USERNAME}:${USERNAME} .devcontainer/resources/sample-zshenv $USER_HOME/.zshenv
 COPY --chown=${USERNAME}:${USERNAME} .devcontainer/resources/sample-p10k-zsh $USER_HOME/.p10k.zsh
 
-# RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path && \
-#    source "$HOME/.cargo/env"
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path && \
+    source "$HOME/.cargo/env" && \
+    cargo install exa && \
+    cargo install bat && \
+    cargo install ripgrep && \
+    cargo install rm-improved

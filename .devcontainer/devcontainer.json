@@ -4,6 +4,7 @@
         "dockerfile": "Dockerfile",
         "context": ".."
     },
+    "postCreateCommand": "/usr/sbin/zsh .devcontainer/init/init.sh",
     "remoteUser": "ggm",
     "overrideCommand": true
 }
