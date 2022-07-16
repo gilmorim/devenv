@@ -28,4 +28,5 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no
     cargo install exa && \
     cargo install bat && \
     cargo install ripgrep && \
-    cargo install rm-improved
+    cargo install rm-improved && \
+    cargo install zoxide
