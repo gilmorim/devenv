@@ -1,0 +1,9 @@
+{
+    "name": "GGM-ARCH",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "remoteUser": "ggm",
+    "overrideCommand": true
+}
