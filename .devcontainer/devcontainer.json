@@ -6,5 +6,13 @@
     },
     "postCreateCommand": "/usr/sbin/zsh .devcontainer/init/init.sh",
     "remoteUser": "ggm",
-    "overrideCommand": true
+    "overrideCommand": true,
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "rust-lang.rust-analyzer",
+                "swellaby.rust-pack"
+            ]
+        }
+    }
 }
