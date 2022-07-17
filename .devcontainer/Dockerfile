@@ -7,6 +7,7 @@ RUN /usr/sbin/bash -c "pacman -Syu --noconfirm" && \
     pacman -S git --noconfirm && \
     pacman -S wget --noconfirm && \
     pacman -S zsh --noconfirm && \
+    pacman -S vim --noconfirm && \
     useradd -m -s /usr/sbin/zsh ${USERNAME} && \
     pacman -Sc
 
@@ -29,4 +30,5 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no
     cargo install bat && \
     cargo install ripgrep && \
     cargo install rm-improved && \
-    cargo install zoxide
+    cargo install zoxide && \
+    cargo install git-delta
