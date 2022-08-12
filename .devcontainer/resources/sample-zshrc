@@ -110,3 +110,8 @@ POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 
 # Source config
 source ~/.p10k.zsh
+source "$HOME/.cargo/env"
+
+# Aliases
+alias lc="exa --long --classify --color-scale --icons --all --group-directories-first --group --header --git --created"
+alias lt="exa --tree --icons --level=2"

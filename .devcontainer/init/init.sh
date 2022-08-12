@@ -2,4 +2,3 @@
 yes | ~/.fzf/install
 
 source ~/.zshrc
-source "$HOME/.cargo/env"
